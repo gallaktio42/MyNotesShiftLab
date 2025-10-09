@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MyNotesShift</string>
+    <string name="app_name_main">Мои заметки</string>
+    <string name="empty_list">Пока заметок нет</string>
+    <string name="error_button">Повторить попытку</string>
+    <string name="enter_text">Начните ввод</string>
+    <string name="title">Заголовок</string>
+    <string name="chars">%1$s символов</string>
+    <string name="search_notes">Поиск заметок</string>
+    <string name="empty_search">Ничего не найдено</string>
 </resources>

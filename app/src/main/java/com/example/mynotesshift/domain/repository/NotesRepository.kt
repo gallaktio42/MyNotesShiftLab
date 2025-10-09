@@ -1,6 +1,6 @@
-package com.example.mynotesshift.domain
+package com.example.mynotesshift.domain.repository
 
-import com.example.mynotesshift.presentation.NoteUIModel
+import com.example.mynotesshift.domain.data.NoteUIModel
 
 interface NotesRepository {
     suspend fun getNotes(): List<NoteUIModel>

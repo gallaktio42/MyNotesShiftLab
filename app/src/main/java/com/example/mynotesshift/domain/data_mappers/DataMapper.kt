@@ -1,7 +1,7 @@
-package com.example.mynotesshift.domain
+package com.example.mynotesshift.domain.data_mappers
 
 import com.example.mynotesshift.data.local.entity.NotesEntity
-import com.example.mynotesshift.presentation.NoteUIModel
+import com.example.mynotesshift.domain.data.NoteUIModel
 
 fun NotesEntity.toUiModel(): NoteUIModel {
     return NoteUIModel(

@@ -1,4 +1,4 @@
-package com.example.mynotesshift.ui.theme
+package com.example.mynotesshift.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

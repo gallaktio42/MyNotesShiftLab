@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.example.mynotesshift.data.local.dao.NotesDao
 import com.example.mynotesshift.data.local.database.NotesDatabase
 import com.example.mynotesshift.data.repository.NotesRepositoryImpl
-import com.example.mynotesshift.domain.NotesRepository
+import com.example.mynotesshift.domain.repository.NotesRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,7 +29,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNotesDao(db: NotesDatabase): NotesDao{
+    fun provideNotesDao(db: NotesDatabase): NotesDao {
         return db.notesDao()
     }
 

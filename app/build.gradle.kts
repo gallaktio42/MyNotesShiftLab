@@ -69,5 +69,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.8.1")
     ksp("androidx.room:room-compiler:2.8.1")
 
+    //icons
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
+
+    //lottie animations
+    implementation("com.airbnb.android:lottie-compose:6.1.0")
 }

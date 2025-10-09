@@ -1,4 +1,4 @@
-package com.example.mynotesshift
+package com.example.mynotesshift.presentation
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -13,10 +13,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.mynotesshift.presentation.CreateNoteScreen
-import com.example.mynotesshift.presentation.MainScreen
-import com.example.mynotesshift.presentation.NoteScreen
-import com.example.mynotesshift.ui.theme.MyNotesShiftTheme
+import com.example.mynotesshift.presentation.theme.MyNotesShiftTheme
+import com.example.mynotesshift.presentation.ui.CreateNoteScreen
+import com.example.mynotesshift.presentation.ui.MainScreen
+import com.example.mynotesshift.presentation.ui.NoteScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,46 +47,40 @@ class MainActivity : ComponentActivity() {
                             defaultValue = 1
                         })) {
                             val id = it.arguments?.getInt("id") ?: 1
-                            NoteScreen(
-                                id = id,
-                                onClickBack = {
-                                    navController.navigate("main_screen"){
-                                        launchSingleTop = true
-                                        popUpTo("main_screen") {
-                                            inclusive = true
-                                        }
+                            NoteScreen(id = id, onClickBack = {
+                                navController.navigate("main_screen") {
+                                    launchSingleTop = true
+                                    popUpTo("main_screen") {
+                                        inclusive = true
                                     }
-                                },
-                                onSaveClick = {
-                                    navController.navigate("main_screen"){
-                                        launchSingleTop = true
-                                        popUpTo("main_screen") {
-                                            inclusive = true
-                                        }
+                                }
+                            }, onSaveClick = {
+                                navController.navigate("main_screen") {
+                                    launchSingleTop = true
+                                    popUpTo("main_screen") {
+                                        inclusive = true
                                     }
-                                })
+                                }
+                            })
                         }
 
                         composable("create_screen") {
-                            CreateNoteScreen(
-                                onClickBack = {
-                                    navController.navigate("main_screen") {
-                                        launchSingleTop = true
-                                        popUpTo("main_screen") {
-                                            inclusive = true
-                                        }
+                            CreateNoteScreen(onClickBack = {
+                                navController.navigate("main_screen") {
+                                    launchSingleTop = true
+                                    popUpTo("main_screen") {
+                                        inclusive = true
                                     }
-                                },
-                                onSaveClick = {
-                                    navController.navigate("main_screen") {
-                                        launchSingleTop = true
-                                        popUpTo("main_screen") {
-                                            inclusive = true
-                                        }
+                                }
+                            }, onSaveClick = {
+                                navController.navigate("main_screen") {
+                                    launchSingleTop = true
+                                    popUpTo("main_screen") {
+                                        inclusive = true
                                     }
-                                })
+                                }
+                            })
                         }
-
                     }
                 }
             }

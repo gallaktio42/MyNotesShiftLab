@@ -1,4 +1,6 @@
-package com.example.mynotesshift.presentation
+package com.example.mynotesshift.presentation.states
+
+import com.example.mynotesshift.domain.data.NoteUIModel
 
 data class NoteState(
     val data: NoteUIModel = NoteUIModel(

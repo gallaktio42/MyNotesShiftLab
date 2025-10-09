@@ -1,9 +1,11 @@
-package com.example.mynotesshift.presentation
+package com.example.mynotesshift.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mynotesshift.domain.GetDetailNoteUseCase
-import com.example.mynotesshift.domain.InsertNewNoteUseCase
+import com.example.mynotesshift.domain.data.NoteUIModel
+import com.example.mynotesshift.domain.use_cases.GetDetailNoteUseCase
+import com.example.mynotesshift.domain.use_cases.InsertNewNoteUseCase
+import com.example.mynotesshift.presentation.states.NoteState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

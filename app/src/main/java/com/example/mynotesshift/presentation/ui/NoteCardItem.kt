@@ -1,4 +1,4 @@
-package com.example.mynotesshift.presentation
+package com.example.mynotesshift.presentation.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.mynotesshift.domain.data.NoteUIModel
 
 @Composable
 fun NoteCardItem(
@@ -70,37 +71,49 @@ fun NoteCardItem(
             }
         }
     ) {
-        Column(
-            Modifier
-                .fillMaxWidth()
-                .height(85.dp)
-                .clip(RoundedCornerShape(10.dp))
-                .background(MaterialTheme.colorScheme.surfaceContainerHigh)
-                .clickable {
-                    onNavigate(item.id)
-                }
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center
+        NoteCard(
+            item = item
         ) {
-
-            Text(
-                text = item.title,
-                fontWeight = FontWeight.W500,
-                fontSize = 16.sp,
-                lineHeight = 20.sp,
-            )
-            Spacer(Modifier.padding(vertical = 2.dp))
-            Text(
-                text = item.description,
-                fontWeight = FontWeight.SemiBold,
-                fontSize = 14.sp,
-                lineHeight = 20.sp,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                color = MaterialTheme.colorScheme.onSecondaryContainer.copy(0.6f)
-            )
-
+            onNavigate(item.id)
         }
+    }
+}
+
+@Composable
+private fun NoteCard(
+    item: NoteUIModel,
+    onNavigate: (Int) -> Unit
+) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .height(85.dp)
+            .clip(RoundedCornerShape(10.dp))
+            .background(MaterialTheme.colorScheme.surfaceContainerHigh)
+            .clickable {
+                onNavigate(item.id)
+            }
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center
+    ) {
+
+        Text(
+            text = item.title,
+            fontWeight = FontWeight.W500,
+            fontSize = 16.sp,
+            lineHeight = 20.sp,
+        )
+        Spacer(Modifier.padding(vertical = 2.dp))
+        Text(
+            text = item.description,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 14.sp,
+            lineHeight = 20.sp,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            color = MaterialTheme.colorScheme.onSecondaryContainer.copy(0.6f)
+        )
+
     }
 }
 

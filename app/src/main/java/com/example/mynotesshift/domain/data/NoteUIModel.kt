@@ -1,4 +1,4 @@
-package com.example.mynotesshift.presentation
+package com.example.mynotesshift.domain.data
 
 data class NoteUIModel(
     val id: Int,

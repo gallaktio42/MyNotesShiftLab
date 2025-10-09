@@ -1,10 +1,10 @@
 package com.example.mynotesshift.data.repository
 
 import com.example.mynotesshift.data.local.dao.NotesDao
-import com.example.mynotesshift.domain.NotesRepository
-import com.example.mynotesshift.domain.toEntity
-import com.example.mynotesshift.domain.toUiModel
-import com.example.mynotesshift.presentation.NoteUIModel
+import com.example.mynotesshift.domain.data.NoteUIModel
+import com.example.mynotesshift.domain.data_mappers.toEntity
+import com.example.mynotesshift.domain.data_mappers.toUiModel
+import com.example.mynotesshift.domain.repository.NotesRepository
 import javax.inject.Inject
 
 class NotesRepositoryImpl @Inject constructor(

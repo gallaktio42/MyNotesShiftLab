@@ -1,4 +1,4 @@
-package com.example.mynotesshift.ui.theme
+package com.example.mynotesshift.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

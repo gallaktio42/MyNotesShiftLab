@@ -1,6 +1,7 @@
-package com.example.mynotesshift.domain
+package com.example.mynotesshift.domain.use_cases
 
-import com.example.mynotesshift.presentation.NoteUIModel
+import com.example.mynotesshift.domain.data.NoteUIModel
+import com.example.mynotesshift.domain.repository.NotesRepository
 import javax.inject.Inject
 
 class GetDetailNoteUseCase @Inject constructor(
